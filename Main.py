@@ -2,34 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sc
 from sklearn.datasets import make_circles
-
-
-# act functions
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-
-def binaryStep(x):
-    return np.heaviside(x, 1)
-
-
-def tanh(x):
-    return np.tanh(x)
-
-
-def relu(x):
-    xA = []
-    for i in x:
-        if i < 0:
-            xA.append(0)
-        else:
-            xA.append(i)
-    return xA
-
+from ActivationFunction import *
 
 # make datasets
 samples = 500
-features = 2  # bidimensional
+features = 2  # bi dimensional
 
 # plot the problem
 X, Y = make_circles(n_samples=samples, factor=0.5, noise=0.06)
@@ -39,3 +16,6 @@ plt.scatter(X[Y == 1, 0], X[Y == 1, 1], c='#0a9396')
 plt.axis("equal")
 plt.show()
 
+# xd = np.linspace(-5, 5, 10)
+# print(relu(xd))
+# plt.plot(xd, binaryStep(xd))
