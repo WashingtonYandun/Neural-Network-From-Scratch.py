@@ -22,3 +22,12 @@ def relu(x):
         else:
             xA.append(i)
     return xA
+
+
+# derivative implementation
+def sigmoidDerivative(x):
+    return sigmoid(x) * (1 - sigmoid(x))
+
+
+def tanhDerivative(x):
+    return 1 - tanh(x) ** 2
