@@ -15,13 +15,17 @@ def tanh(x):
 
 
 def relu(x):
-    xA = []
-    for i in x:
-        if i < 0:
-            xA.append(0)
-        else:
-            xA.append(i)
-    return xA
+    return np.maximum(0, x)
+
+
+# def relu(x):
+#     xA = []
+#     for i in x:
+#         if i < 0:
+#             xA.append(0)
+#         else:
+#             xA.append(i)
+#     return xA
 
 
 # derivative implementation
