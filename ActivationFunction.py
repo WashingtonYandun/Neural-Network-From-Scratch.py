@@ -34,4 +34,4 @@ def sigmoidDerivative(x):
 
 
 def tanhDerivative(x):
-    return 1 - tanh(x) ** 2
+    return 1 - tanh(x) * tanh(x)
