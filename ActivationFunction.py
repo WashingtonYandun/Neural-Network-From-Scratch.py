@@ -18,7 +18,7 @@ def relu(x):
     return np.maximum(0, x)
 
 
-# def relu(x):
+# def reluClassic(x):
 #     xA = []
 #     for i in x:
 #         if i < 0:
