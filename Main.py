@@ -27,3 +27,9 @@ def createNeuralNetwork(structure, activationFunction):
 
 
 print(createNeuralNetwork(structure, sigmoid))
+
+
+if __name__ == "__main__":
+    # pep 8 practice
+else:
+    # pep 8 practice
