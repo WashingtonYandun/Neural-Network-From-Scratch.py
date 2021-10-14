@@ -6,7 +6,7 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
-def binaryStep(x):
+def binary_step(x):
     return np.heaviside(x, 1)
 
 
@@ -29,9 +29,9 @@ def relu(x):
 
 
 # derivative implementation
-def sigmoidDerivative(x):
+def sigmoid_derivative(x):
     return sigmoid(x) * (1 - sigmoid(x))
 
 
-def tanhDerivative(x):
+def tanh_derivative(x):
     return 1 - tanh(x) * tanh(x)
