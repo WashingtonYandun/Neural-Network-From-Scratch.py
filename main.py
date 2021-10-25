@@ -18,15 +18,6 @@ plt.axis("equal")
 plt.show()
 
 
-# def a topology
-networkStructure = [features, 2, 4, 8, 4, 2, 1]
-
-
-def create_neural_network(structure, neuralNetworkFunction):
-    neuralNetwork = []
-    for l, layer in enumerate(structure[:-1]):
-        neuralNetwork.append(Layer(structure[l], structure[l + 1], neuralNetworkFunction))
-    return neuralNetwork
-
-
-
+if __name__ == "__main__":
+    # def a topology
+    networkStructure = [features, 2, 4, 8, 4, 2, 1]
