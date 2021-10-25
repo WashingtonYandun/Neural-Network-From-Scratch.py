@@ -18,20 +18,26 @@ def relu(x):
     return np.maximum(0, x)
 
 
-# def relu_classic(x):
-#     xA = []
-#     for i in x:
-#         if i < 0:
-#             xA.append(0)
-#         else:
-#             xA.append(i)
-#     return xA
+def relu_classic(x):
+    xA = []
+    for i in x:
+        if i < 0:
+            xA.append(0)
+        else:
+            xA.append(i)
+    return xA
 
 
-# derivative implementation
+# derivative implementation of act functions
 def sigmoid_derivative(x):
     return sigmoid(x) * (1 - sigmoid(x))
 
 
 def tanh_derivative(x):
     return 1 - tanh(x) * tanh(x)
+
+
+# cost function
+def mse(yt,yf):
+    '''cost function'''
+    return np.square(yf - yt).mean() 
