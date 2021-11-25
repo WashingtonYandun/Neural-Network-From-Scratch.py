@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sc
 from sklearn.datasets import make_circles
-from function import *
-from layer import *
+from function import * # internal
+from layer import * #internal
+
 
 # make datasets
 samples = 500
@@ -18,6 +19,7 @@ plt.axis("equal")
 plt.show()
 
 
+# for improving performance
 if __name__ == "__main__":
     # def a topology
     networkStructure = [features, 2, 4, 8, 4, 2, 1]
