@@ -5,7 +5,6 @@ from sklearn.datasets import make_circles
 from function import * # internal
 from layer import * #internal
 
-
 # make datasets
 samples = 500
 features = 2  # bi dimensional
@@ -17,7 +16,6 @@ plt.scatter(X[Y == 0, 0], X[Y == 0, 1], c='#6a040f')
 plt.scatter(X[Y == 1, 0], X[Y == 1, 1], c='#0a9396')
 plt.axis("equal")
 plt.show()
-
 
 # for improving performance
 if __name__ == "__main__":
