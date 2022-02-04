@@ -1,7 +1,7 @@
 import numpy as np
 
 
-# act functions
+# Activation functions
 def sigmoid(x):
     """sgmoid dependent value from value, using numpy"""
     return 1 / (1 + np.exp(-x))
@@ -33,7 +33,7 @@ def relu_classic(x):
     return xA
 
 
-# derivative implementation of act functions
+# derivative implementation of activation functions
 def sigmoid_derivative(x):
     """sigmoid derivative dependent value from value, using numpy"""
     return sigmoid(x) * (1 - sigmoid(x))
@@ -44,7 +44,7 @@ def tanh_derivative(x):
     return 1 - tanh(x) * tanh(x)
 
 
-# cost function
-def mse(yt,yf):
+# cost functions
+def mse(yt, yf):
     """mean square error cost function"""
     return np.square(yf - yt).mean() 
