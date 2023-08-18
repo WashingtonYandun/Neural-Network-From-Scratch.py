@@ -84,3 +84,32 @@ def create_nn(topology, activation_function):
 
 
 # Train the model
+def train(nn, X, y, epochs, learning_rate, cost_function, cost_function_derivative):
+    mses = []
+    for i in range(epochs):
+        # Forward pass
+        nn[0].output = nn[0].activation_function(np.dot(X, nn[0].weights) + nn[0].bias)
+        for l, layer in enumerate(nn[1:]):
+            layer.output = layer.activation_function(np.dot(nn[l].output, layer.weights) + layer.bias)
+
+        # Backward pass
+        deltas = []
+        for l in reversed(range(1, len(nn))):
+            if l == len(nn) - 1:
+                # Calculate delta last layer
+                deltas.insert(0, cost_function_derivative(y, nn[l].output) * nn[l].activation_function(nn[l].output))
+            else:
+                # Calculate delta hidden layers
+                deltas.insert(0, np.dot(deltas[0], nn[l+1].weights.T) * nn[l].activation_function(nn[l].output))
+                
+        # Gradient descent
+        for l in range(len(nn)):
+            layer = nn[l]
+            layer.weights += -learning_rate * np.dot(nn[l-1].output.T, deltas[l])
+            layer.bias += -learning_rate * deltas[l].sum(axis=0, keepdims=True)
+        # Calculate mean square error
+        mse = cost_function(y, nn[-1].output)
+        mses.append(mse)
+        if i % 1000 == 0:
+            print(f"Epoch: {i}, MSE: {mse}")
+    return mses
